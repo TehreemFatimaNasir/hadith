@@ -5,7 +5,7 @@ st.title("HADITH App")
 
 
 
-# ===================== BOOKS =====================
+
 response = requests.get(f"https://www.hadithapi.com/api/books?apiKey=$2y$10$f3nHAEPg8lIwrKUpFqJn8d3LzmAt7alzuSVWFZj9YTFXn8lvPT6S")
 books = response.json()["books"]
 
@@ -15,7 +15,7 @@ booksName = st.selectbox("Select your desired book", bookslist)
 
 books_slug = booksName.split("|")[1].strip()
 
-# ===================== CHAPTERS =====================
+
 chaptersresponse = requests.get(
     f"https://www.hadithapi.com/api/{books_slug}/chapters?apiKey=$2y$10$f3nHAEPg8lIwrKUpFqJn8d3LzmAt7alzuSVWFZj9YTFXn8lvPT6S"
 )
